@@ -6,3 +6,5 @@ Programm created for multiple reasons
 ### First update
 1. Created this repository & pushed
 2. Tried some branching stuff & made translation to english
+
+The lmlp branch will be used to make this program Look More Like Python ;)
