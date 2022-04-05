@@ -1,33 +1,33 @@
 import random
 
-tablica, kupon = [], [7, 18, 22, 26, 33, 49]
-trafienia, proby, kasa = 0, 0, 0
+array, cupon = [], [7, 18, 22, 26, 33, 49]
+hits, atmpts, cash_spent = 0, 0, 0
 
 
-def wypelnienie (tab):
+def fullfill (tab):
     while len(tab) < 6:
         x = random.randint(1, 49)
         if not tab.count(x):
             tab.append(x)
 
 
-def sprawdzenie (tab, kpn, traf):
+def verify (tab, kpn, hit):
     for i in kpn:
         if tab.count(i):
-            traf += 1
-    return traf
+            hit += 1
+    return hit
 
 
-while trafienia < 3:
-    trafienia = 0
-    tablica.clear()
-    wypelnienie(tablica)
-    tablica.sort()
-    print(tablica)
-    sprawdzenie(tablica, kupon, trafienia)
-    trafienia = sprawdzenie(tablica, kupon, trafienia)
-    print("Liczba trafień: ", trafienia)
-    proby += 1
-    kasa += 3
-print("Liczba prób: ", proby)
-print("Wydane pieniądze:", kasa, "zł")
+while hits < 3:
+    hits = 0
+    array.clear()
+    fullfill(array)
+    array.sort()
+    print(array)
+    verify(array, cupon, hits)
+    hits = verify(array, cupon, hits)
+    print("Number of hits: ", hits)
+    atmpts += 1
+    cash_spent += 3
+print("Number of attempts: ", atmpts)
+print("Cash spent:", cash_spent, "zł")
