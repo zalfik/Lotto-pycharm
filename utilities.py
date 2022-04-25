@@ -8,7 +8,7 @@ class Lottery:
         self.date = date
         self.single_draw = []
 
-    # Fills a coupon with random numbers
+    # Fill a coupon with random numbers
     def fill(self):
         numbers_per_draw = 6
         numbers_range = 49
@@ -19,7 +19,7 @@ class Lottery:
         self.single_draw.sort()
 
 
-# Creates a dictionary of >number< draws. Adds new draws if not empty.
+# Create a dictionary of >number< draws. Adds new draws if not empty.
 def multidraw(draw_dict, number):
     for i in range(len(draw_dict) + 1, len(draw_dict) + number + 1):
         one_draw = Lottery(i)
@@ -27,7 +27,7 @@ def multidraw(draw_dict, number):
         draw_dict[i] = one_draw.single_draw
 
 
-# Counts hits in drawn from coupon
+# Count hits in drawn from coupon
 def count_hits(drawn, coupon):
     hits = 0
     for item in coupon:
@@ -36,7 +36,7 @@ def count_hits(drawn, coupon):
     return hits
 
 
-# Creates a dictionary where key is number of hits and value is a list of lottery numbers
+# Create a dictionary where key is number of hits and value is a list of lottery numbers
 def make_hits_dict(draws_set, coupon):
     hits_dict = {number: [] for number in ['0', '1', '2', '3', '4', '5', '6']}
     for lottery_number in draws_set:
